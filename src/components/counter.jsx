@@ -2,7 +2,10 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = { count: 10 };
-
+  constructor() {
+    super();
+    this.handleIncrement = this.handleIncrement.bind(this);
+  }
   handleIncrement() {
     console.log("Increment");
   }
@@ -23,7 +26,7 @@ class Counter extends Component {
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.count === 5 ? "warning" : "primary";
     return classes;
   }
 
